@@ -1,225 +1,261 @@
 # LM2596 Adjustable Buck Converter PCB Design
 
-![PCB Layout](FINAL_VIEW.png)
+![3D Top View](3D_TOP.png)
 
-A 2-layer LM2596-based adjustable DC-DC buck converter PCB designed in Altium Designer 25.1. The project includes custom schematic symbols, custom PCB footprints, ERC/DRC verification, BOM generation, and manufacturing-ready outputs.
-
----
-
-## Project Overview
-
-This project implements an adjustable DC-DC buck converter using the LM2596 switching regulator IC.
-
-The objective was to design a compact, manufacturable, and electrically verified PCB capable of efficiently stepping down a higher DC input voltage to a regulated lower output voltage.
-
-The schematic was developed by studying the LM2596 datasheet and reference application circuit, followed by complete PCB implementation, verification, and manufacturing preparation in Altium Designer.
+A professionally designed 2-layer LM2596 Adjustable Buck Converter PCB developed in Altium Designer 25.1. This project includes custom schematic symbol creation, custom PCB footprint development, ERC/DRC verification, BOM generation, Gerber generation, and manufacturing-ready outputs.
 
 ---
 
-## Project Specifications
+# Project Overview
 
-| Parameter             | Value                 |
-| --------------------- | --------------------- |
-| PCB Layers            | 2                     |
-| PCB Design Software   | Altium Designer 25.1  |
-| Regulator IC          | LM2596 Adjustable     |
-| Inductor              | 47 µH                 |
-| Diode                 | SS54 Schottky         |
-| Ground Plane          | Bottom Layer GND Pour |
-| Verification          | ERC & DRC Passed      |
-| Manufacturing Outputs | Generated             |
-| Custom Libraries      | Yes                   |
-| 3D Verification       | Completed             |
+The objective of this project was to design a compact, reliable, and manufacturable DC-DC buck converter PCB based on the LM2596 Adjustable Switching Regulator.
+
+Unlike linear regulators, switching regulators provide significantly higher efficiency by minimizing power dissipation and heat generation during voltage conversion.
+
+The complete schematic was designed by studying the LM2596 datasheet and application guidelines, followed by PCB implementation, verification, and manufacturing preparation in Altium Designer 25.1.
 
 ---
 
-## Key Features
+# Project Specifications
 
-* LM2596 Adjustable Switching Regulator
-* Adjustable Output Voltage
-* 2-Layer PCB Design
+| Parameter             | Specification          |
+| --------------------- | ---------------------- |
+| PCB Type              | DC-DC Buck Converter   |
+| PCB Layers            | 2-Layer PCB            |
+| PCB Design Software   | Altium Designer 25.1   |
+| Main IC               | LM2596 Adjustable      |
+| Inductor              | 47 µH                  |
+| Diode                 | SS54 Schottky Diode    |
+| Ground Plane          | Bottom Layer GND Pour  |
+| Verification          | ERC Passed, DRC Passed |
+| BOM Generation        | Completed              |
+| Gerber Generation     | Completed              |
+| Manufacturing Outputs | Generated              |
+| Custom Symbol         | Yes                    |
+| Custom Footprints     | Yes                    |
+| 3D Verification       | Completed              |
+
+---
+
+# Key Features
+
+* Adjustable Output Voltage Regulation
+* High-Efficiency Switching Converter Design
+* 2-Layer PCB Layout
 * Custom Schematic Symbols
 * Custom PCB Footprints
-* Wide High-Current Power Traces
-* Bottom Layer Ground Pour
+* Wide High-Current Power Routing
+* Bottom Layer Ground Plane
 * ERC Verification
 * DRC Verification
 * BOM Generation
 * Gerber Generation
-* Manufacturing-Ready Outputs
+* Manufacturing Documentation
 * 3D PCB Verification
 
 ---
 
-## Project Images
+# Project Images
 
-### Schematic
+## Schematic Diagram
 
 ![Schematic](SCHEMATIC.png)
 
 ---
 
-### Final PCB Layout
+## Final PCB Layout
 
 ![PCB Layout](FINAL_VIEW.png)
 
 ---
 
-### Top Layer
+## Top Layer
 
 ![Top Layer](TOP_VIEW.png)
 
 ---
 
-### Bottom Layer
+## Bottom Layer
 
 ![Bottom Layer](BOTTOM_VIEW.png)
 
 ---
 
-### 3D Top View
+## 3D Top View
 
 ![3D Top View](3D_TOP.png)
 
 ---
 
-### 3D Bottom View
+## 3D Bottom View
 
 ![3D Bottom View](3D_BOTTOM.png)
 
 ---
 
-## Main Components
+# Main Components
 
-| Designator | Component                        |
-| ---------- | -------------------------------- |
-| U1         | LM2596 Adjustable Buck Regulator |
-| D1         | SS54 Schottky Diode              |
-| L1         | 47 µH Inductor                   |
-| RV1        | 10 kΩ Potentiometer              |
-| C1         | 100 µF Input Capacitor           |
-| C2         | 220 µF Output Capacitor          |
-| C3, C5     | 100 nF Ceramic Capacitors        |
-| C4, C6     | 1 µF Ceramic Capacitors          |
-| J1         | Input Terminal Block             |
-| J2         | Output Terminal Block            |
+| Designator | Component                   | Function                       |
+| ---------- | --------------------------- | ------------------------------ |
+| U1         | LM2596 Adjustable Regulator | Main Switching Regulator       |
+| D1         | SS54 Schottky Diode         | Freewheeling Diode             |
+| L1         | 47 µH Inductor              | Energy Storage Element         |
+| RV1        | 10 kΩ Potentiometer         | Output Voltage Adjustment      |
+| C1         | 100 µF Capacitor            | Input Filtering                |
+| C2         | 220 µF Capacitor            | Output Filtering               |
+| C3, C5     | 100 nF Capacitors           | High-Frequency Noise Filtering |
+| C4, C6     | 1 µF Capacitors             | Additional Filtering           |
+| J1         | Input Terminal Block        | DC Input Connection            |
+| J2         | Output Terminal Block       | Regulated Output Connection    |
 
 ---
 
-## Working Principle
+# Working Principle
 
-The LM2596 operates as a switching regulator.
+The LM2596 operates as a switching regulator that efficiently converts a higher DC voltage into a lower regulated DC voltage.
 
-1. Input DC power enters through the input terminal.
-2. Input capacitors suppress ripple and supply noise.
-3. The LM2596 switches the input voltage at high frequency.
+### Power Flow
+
+1. Input power enters through the input terminal block.
+2. Input capacitors filter noise and ripple.
+3. LM2596 switches the input voltage at high frequency.
 4. The inductor stores and transfers energy.
-5. The Schottky diode provides the freewheeling current path.
+5. The Schottky diode provides the current path during switching OFF periods.
 6. Output capacitors smooth the output voltage.
-7. The feedback network maintains output voltage regulation.
+7. The feedback network regulates the output voltage through duty-cycle control.
 
-Compared to linear regulators, this switching topology offers significantly higher efficiency and reduced power dissipation.
+This topology provides significantly better efficiency compared to traditional linear regulators.
 
 ---
 
-## PCB Design Highlights
+# PCB Design Highlights
 
-### Component Placement Strategy
+## Component Placement Strategy
 
-Components were arranged according to power flow:
+Components were arranged according to functional power flow:
 
 **Input Connector → Input Filter → LM2596 → Inductor & Diode → Output Filter → Output Connector**
 
-### Routing Considerations
+This approach improves:
 
-* Wide traces used for high-current paths
-* Reduced voltage drop
-* Improved current carrying capability
-* Short power-routing paths
-* Logical component grouping
-
-### Grounding Strategy
-
-* Bottom-layer GND copper pour
-* Reduced ground impedance
-* Improved return current paths
-* Better PCB manufacturability
+* Routing efficiency
+* Current flow management
+* Manufacturability
+* Layout readability
 
 ---
 
-## Design Verification
+## Routing Considerations
 
-### Electrical Rule Check (ERC)
+Special attention was given to:
+
+* Wide power traces
+* Short high-current paths
+* Reduced voltage drop
+* Reduced resistive losses
+* Improved current carrying capability
+
+High-current routing was implemented for:
+
+* VIN
+* Switching Node
+* VOUT
+
+---
+
+## Grounding Strategy
+
+A bottom-layer GND copper pour was implemented to provide:
+
+* Lower ground impedance
+* Better return current paths
+* Improved PCB reliability
+* Enhanced manufacturability
+
+---
+
+# Design Verification
+
+## Electrical Rule Check (ERC)
 
 * ERC Completed Successfully
 * No critical schematic connectivity issues detected
 
-### Design Rule Check (DRC)
+## Design Rule Check (DRC)
 
-Final DRC Status:
+Final DRC Results:
 
 * Clearance Violations = 0
 * Width Violations = 0
 * Unrouted Nets = 0
 * Total DRC Errors = 0
 
-The PCB successfully passed all verification checks before manufacturing output generation.
+The PCB successfully passed all design verification checks before manufacturing output generation.
 
 ---
 
-## Manufacturing Outputs
+# Project Outcome
 
-The repository includes:
+The project successfully achieved all intended design objectives.
 
-* Gerber Files
-* NC Drill Files
-* Bill of Materials (BOM)
-* ERC Report
-* DRC Report
-* PCB Source Files
-* Custom Libraries
+### Accomplishments
+
+* Designed schematic from LM2596 datasheet reference circuit
+* Created custom schematic symbols
+* Created custom PCB footprints
+* Completed PCB layout implementation
+* Performed ERC verification
+* Performed DRC verification
+* Generated BOM
+* Generated Gerber files
+* Generated manufacturing outputs
+* Completed 3D PCB verification
+
+The final design is manufacturing-ready and suitable for educational, embedded, and power electronics applications.
 
 ---
 
-## Repository Contents
+# Repository Contents
 
-### Design Files
+## Design Files
 
-* PCB Layout (.PcbDoc)
-* Schematic (.SchDoc)
-* Project File (.PrjPcb)
+* LM2596 Buck Converter PCB Layout (.PcbDoc)
+* LM2596 Buck Converter Schematic (.SchDoc)
+* Altium Project File (.PrjPcb)
 
-### Libraries
+## Custom Libraries
 
 * Custom Schematic Library (.SchLib)
 * Custom PCB Library (.PcbLib)
 
-### Reports
+## Reports
 
 * ERC Report
 * DRC Report
 
-### Manufacturing Files
+## Manufacturing Files
 
-* Gerber Outputs
-* Drill Files
+* Gerber Files
+* NC Drill Files
+* Manufacturing Outputs
 
-### Documentation
+## Documentation
 
-* BOM
+* Bill of Materials (BOM)
 * PCB Layout Images
-* 3D PCB Views
+* 3D PCB Images
 
 ---
 
-## Skills Demonstrated
+# Skills Demonstrated
 
-* PCB Design
+* PCB Design & Layout
 * Altium Designer 25.1
-* Power Electronics PCB Layout
-* Custom Symbol Creation
-* Custom Footprint Creation
+* Power Electronics PCB Design
+* Custom Symbol Development
+* Custom Footprint Development
 * Datasheet Interpretation
+* Component Placement Optimization
 * High-Current Routing
 * Ground Plane Design
 * ERC Verification
@@ -227,20 +263,27 @@ The repository includes:
 * BOM Generation
 * Gerber Generation
 * Manufacturing Documentation
+* Hardware Prototyping
 
 ---
 
-## Software Used
+# Software Used
 
 * Altium Designer 25.1
 
 ---
 
-## Author
+# Author
 
 **Moksh Prajapati**
 
 Electronics Engineering Student
 PCB Design Engineer Aspirant
 
+Focused on PCB Layout Design, Power Electronics PCB Development, and Hardware Prototyping.
+
 GitHub: https://github.com/moksh-pcb-design
+
+---
+
+⭐ If you found this project useful, consider giving it a star.
