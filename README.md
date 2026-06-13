@@ -1,25 +1,47 @@
 # LM2596 Adjustable Buck Converter PCB Design
 
-A 2-layer LM2596-based adjustable DC-DC buck converter PCB designed in Altium Designer 25.1. This project includes custom schematic symbols, custom PCB footprints, ERC/DRC verification, BOM generation, and manufacturing-ready outputs.
+![PCB Layout](FINAL_VIEW.png)
+
+A 2-layer LM2596-based adjustable DC-DC buck converter PCB designed in Altium Designer 25.1. The project includes custom schematic symbols, custom PCB footprints, ERC/DRC verification, BOM generation, and manufacturing-ready outputs.
 
 ---
 
 ## Project Overview
 
-This project implements an adjustable DC-DC buck converter using the LM2596 switching regulator IC. The PCB efficiently converts a higher DC input voltage into a regulated lower DC output voltage while minimizing power loss and heat generation.
+This project implements an adjustable DC-DC buck converter using the LM2596 switching regulator IC.
 
-The schematic was developed by studying the LM2596 datasheet and application circuit, followed by complete PCB implementation, verification, and manufacturing preparation in Altium Designer.
+The objective was to design a compact, manufacturable, and electrically verified PCB capable of efficiently stepping down a higher DC input voltage to a regulated lower output voltage.
+
+The schematic was developed by studying the LM2596 datasheet and reference application circuit, followed by complete PCB implementation, verification, and manufacturing preparation in Altium Designer.
+
+---
+
+## Project Specifications
+
+| Parameter             | Value                 |
+| --------------------- | --------------------- |
+| PCB Layers            | 2                     |
+| PCB Design Software   | Altium Designer 25.1  |
+| Regulator IC          | LM2596 Adjustable     |
+| Inductor              | 47 µH                 |
+| Diode                 | SS54 Schottky         |
+| Ground Plane          | Bottom Layer GND Pour |
+| Verification          | ERC & DRC Passed      |
+| Manufacturing Outputs | Generated             |
+| Custom Libraries      | Yes                   |
+| 3D Verification       | Completed             |
 
 ---
 
 ## Key Features
 
 * LM2596 Adjustable Switching Regulator
+* Adjustable Output Voltage
 * 2-Layer PCB Design
 * Custom Schematic Symbols
 * Custom PCB Footprints
 * Wide High-Current Power Traces
-* Bottom Layer GND Copper Pour
+* Bottom Layer Ground Pour
 * ERC Verification
 * DRC Verification
 * BOM Generation
@@ -37,7 +59,7 @@ The schematic was developed by studying the LM2596 datasheet and application cir
 
 ---
 
-### PCB Layout
+### Final PCB Layout
 
 ![PCB Layout](FINAL_VIEW.png)
 
@@ -88,15 +110,15 @@ The schematic was developed by studying the LM2596 datasheet and application cir
 
 The LM2596 operates as a switching regulator.
 
-1. Input DC power enters through the input connector.
-2. Input capacitors filter supply ripple and noise.
+1. Input DC power enters through the input terminal.
+2. Input capacitors suppress ripple and supply noise.
 3. The LM2596 switches the input voltage at high frequency.
 4. The inductor stores and transfers energy.
-5. The SS54 Schottky diode provides the freewheeling current path.
+5. The Schottky diode provides the freewheeling current path.
 6. Output capacitors smooth the output voltage.
-7. The potentiometer adjusts the output voltage through the feedback network.
+7. The feedback network maintains output voltage regulation.
 
-This switching topology provides significantly higher efficiency than traditional linear regulators.
+Compared to linear regulators, this switching topology offers significantly higher efficiency and reduced power dissipation.
 
 ---
 
@@ -106,33 +128,33 @@ This switching topology provides significantly higher efficiency than traditiona
 
 Components were arranged according to power flow:
 
-Input Connector → Input Filter → LM2596 → Inductor/Diode → Output Filter → Output Connector
+**Input Connector → Input Filter → LM2596 → Inductor & Diode → Output Filter → Output Connector**
 
 ### Routing Considerations
 
 * Wide traces used for high-current paths
 * Reduced voltage drop
 * Improved current carrying capability
-* Logical functional grouping
-* Short power routing paths
+* Short power-routing paths
+* Logical component grouping
 
 ### Grounding Strategy
 
 * Bottom-layer GND copper pour
-* Improved return current paths
 * Reduced ground impedance
+* Improved return current paths
 * Better PCB manufacturability
 
 ---
 
 ## Design Verification
 
-### ERC Verification
+### Electrical Rule Check (ERC)
 
 * ERC Completed Successfully
 * No critical schematic connectivity issues detected
 
-### DRC Verification
+### Design Rule Check (DRC)
 
 Final DRC Status:
 
@@ -141,17 +163,17 @@ Final DRC Status:
 * Unrouted Nets = 0
 * Total DRC Errors = 0
 
-The PCB successfully passed design verification checks before manufacturing output generation.
+The PCB successfully passed all verification checks before manufacturing output generation.
 
 ---
 
 ## Manufacturing Outputs
 
-This repository includes:
+The repository includes:
 
 * Gerber Files
 * NC Drill Files
-* BOM
+* Bill of Materials (BOM)
 * ERC Report
 * DRC Report
 * PCB Source Files
@@ -159,36 +181,18 @@ This repository includes:
 
 ---
 
-## Custom Libraries
-
-Custom libraries were created and verified during the project.
-
-### Custom Schematic Library
-
-* LM2596 Symbol
-* Supporting Components
-
-### Custom PCB Library
-
-* LM2596 Footprint
-* Power Components
-* Passive Components
-* Connectors
-
----
-
-## Files Included
+## Repository Contents
 
 ### Design Files
 
-* Schematic Document (.SchDoc)
 * PCB Layout (.PcbDoc)
+* Schematic (.SchDoc)
 * Project File (.PrjPcb)
 
 ### Libraries
 
-* Schematic Library (.SchLib)
-* PCB Library (.PcbLib)
+* Custom Schematic Library (.SchLib)
+* Custom PCB Library (.PcbLib)
 
 ### Reports
 
@@ -203,16 +207,16 @@ Custom libraries were created and verified during the project.
 ### Documentation
 
 * BOM
-* PCB Images
-* 3D Views
+* PCB Layout Images
+* 3D PCB Views
 
 ---
 
 ## Skills Demonstrated
 
 * PCB Design
-* Power Electronics PCB Layout
 * Altium Designer 25.1
+* Power Electronics PCB Layout
 * Custom Symbol Creation
 * Custom Footprint Creation
 * Datasheet Interpretation
